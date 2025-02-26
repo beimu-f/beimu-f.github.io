@@ -1,0 +1,129 @@
+body {
+    background-image: url("images/是否确认关闭全舰防御系统.png");
+	background-size: 100% 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+	z-index: 1; /* 确保内容在图片之下 */
+}
+    width: 90%; /* 适应手机屏幕宽度 */
+    max-width: 2000px; /* 最大宽度限制 */
+}
+
+#mainImage {
+    width: 100%; /* 图片宽度自适应容器 */
+	max-height:200px;
+    max-width: 2000px; /* 最大宽度限制 */
+    transition: all 0.3s ease;
+}
+.overlay-image {
+	
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* 初始透明 */
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* 防止图片挡住点击事件 */
+	 z-index: 10; /* 确保图片在内容之上 */
+}
+
+h1 {
+    font-size: 5vw; /* 字体大小根据视口宽度变化 */
+    color: #68495b;
+    margin: 20px 0; /* 增加上下间距 */
+}
+
+button {
+    font-size: 4vw; /* 字体大小根据视口宽度变化 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+#yes {
+    background-color: #A9A9A9; /* 灰色 */
+    color: white;
+}
+
+#no {
+    background-color: #ffffff; /* 白色 */
+    color: black;
+    position: relative;
+}
+
+.yes-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000; /* 黑色 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.yes-text {
+    font-size: 7vw; /* 字体大小根据视口宽度变化 */
+}
+
+.yes-image {
+    width: 100%; /* 图片宽度自适应容器 */
+    max-width: 2000px; /* 最大宽度限制 */
+}
+
+/* 电脑端样式优化 */
+@media (min-width: 768px) {
+    body {
+        display: block;
+    }
+	padding-top:300px;
+
+    .container {
+		padding-top:300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        max-width: none;
+    }
+
+    #mainImage {
+        width: 100%; /* 固定图片宽度 */
+    }
+
+    h1 {
+        font-size: 28px; /* 固定字体大小 */
+        margin: 20px 0;
+    }
+
+    button {
+		 
+
+        font-size: 18px; /* 固定字体大小 */
+    }
+
+    .yes-text {
+        font-size: 36px; /* 固定字体大小 */
+    }
+
+    .yes-image {
+        width: 100%; /* 固定图片宽度 */
+    }
+}
